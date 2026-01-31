@@ -33,36 +33,37 @@
             System.Windows.Forms.Label sociétéLabel;
             System.Windows.Forms.Label paysLabel;
             System.Windows.Forms.Label téléphoneLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CdeClientVilleMPForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.customersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.northwindDataSet = new devoir2.NorthwindDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.code_du_clientLabel1 = new System.Windows.Forms.Label();
-            this.sociétéLabel1 = new System.Windows.Forms.Label();
-            this.paysLabel1 = new System.Windows.Forms.Label();
-            this.téléphoneLabel1 = new System.Windows.Forms.Label();
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersDataGridView = new System.Windows.Forms.DataGridView();
+            this.customersTableAdapter = new devoir2.NorthwindDataSetTableAdapters.CustomersTableAdapter();
+            this.tableAdapterManager = new devoir2.NorthwindDataSetTableAdapters.TableAdapterManager();
+            this.ordersTableAdapter = new devoir2.NorthwindDataSetTableAdapters.OrdersTableAdapter();
+            this.code_du_clientTextBox = new System.Windows.Forms.TextBox();
+            this.sociétéTextBox = new System.Windows.Forms.TextBox();
+            this.paysTextBox = new System.Windows.Forms.TextBox();
+            this.téléphoneTextBox = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customersTableAdapter = new devoir2.NorthwindDataSetTableAdapters.CustomersTableAdapter();
-            this.tableAdapterManager = new devoir2.NorthwindDataSetTableAdapters.TableAdapterManager();
-            this.ordersTableAdapter = new devoir2.NorthwindDataSetTableAdapters.OrdersTableAdapter();
+            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.filtrerToolStripButton = new System.Windows.Forms.ToolStripButton();
             code_du_clientLabel = new System.Windows.Forms.Label();
             sociétéLabel = new System.Windows.Forms.Label();
             paysLabel = new System.Windows.Forms.Label();
@@ -71,43 +72,47 @@
             this.customersBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // code_du_clientLabel
             // 
             code_du_clientLabel.AutoSize = true;
-            code_du_clientLabel.Location = new System.Drawing.Point(23, 58);
+            code_du_clientLabel.Location = new System.Drawing.Point(34, 89);
+            code_du_clientLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             code_du_clientLabel.Name = "code_du_clientLabel";
-            code_du_clientLabel.Size = new System.Drawing.Size(78, 13);
+            code_du_clientLabel.Size = new System.Drawing.Size(114, 20);
             code_du_clientLabel.TabIndex = 1;
             code_du_clientLabel.Text = "Code du client:";
             // 
             // sociétéLabel
             // 
             sociétéLabel.AutoSize = true;
-            sociétéLabel.Location = new System.Drawing.Point(23, 91);
+            sociétéLabel.Location = new System.Drawing.Point(34, 140);
+            sociétéLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             sociétéLabel.Name = "sociétéLabel";
-            sociétéLabel.Size = new System.Drawing.Size(46, 13);
+            sociétéLabel.Size = new System.Drawing.Size(67, 20);
             sociétéLabel.TabIndex = 3;
             sociétéLabel.Text = "Société:";
             // 
             // paysLabel
             // 
             paysLabel.AutoSize = true;
-            paysLabel.Location = new System.Drawing.Point(23, 122);
+            paysLabel.Location = new System.Drawing.Point(34, 188);
+            paysLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             paysLabel.Name = "paysLabel";
-            paysLabel.Size = new System.Drawing.Size(33, 13);
+            paysLabel.Size = new System.Drawing.Size(47, 20);
             paysLabel.TabIndex = 5;
             paysLabel.Text = "Pays:";
             // 
             // téléphoneLabel
             // 
             téléphoneLabel.AutoSize = true;
-            téléphoneLabel.Location = new System.Drawing.Point(23, 153);
+            téléphoneLabel.Location = new System.Drawing.Point(34, 235);
+            téléphoneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             téléphoneLabel.Name = "téléphoneLabel";
-            téléphoneLabel.Size = new System.Drawing.Size(61, 13);
+            téléphoneLabel.Size = new System.Drawing.Size(88, 20);
             téléphoneLabel.TabIndex = 7;
             téléphoneLabel.Text = "Téléphone:";
             // 
@@ -128,15 +133,17 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.printToolStripButton});
+            this.printToolStripButton,
+            this.filtrerToolStripButton});
             this.customersBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.customersBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.customersBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.customersBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.customersBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.customersBindingNavigator.Name = "customersBindingNavigator";
+            this.customersBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.customersBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.customersBindingNavigator.Size = new System.Drawing.Size(905, 42);
+            this.customersBindingNavigator.Size = new System.Drawing.Size(1376, 41);
             this.customersBindingNavigator.TabIndex = 0;
             this.customersBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -153,32 +160,14 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(70, 36);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(57, 36);
+            this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(46, 36);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(46, 36);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 42);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 41);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -186,82 +175,19 @@
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 39);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(73, 31);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 42);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(46, 36);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(46, 36);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 41);
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 42);
-            // 
-            // code_du_clientLabel1
-            // 
-            this.code_du_clientLabel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.code_du_clientLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "Code du client", true));
-            this.code_du_clientLabel1.Location = new System.Drawing.Point(107, 58);
-            this.code_du_clientLabel1.Name = "code_du_clientLabel1";
-            this.code_du_clientLabel1.Size = new System.Drawing.Size(427, 23);
-            this.code_du_clientLabel1.TabIndex = 2;
-            this.code_du_clientLabel1.Text = "label1";
-            // 
-            // sociétéLabel1
-            // 
-            this.sociétéLabel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.sociétéLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "Société", true));
-            this.sociétéLabel1.Location = new System.Drawing.Point(107, 91);
-            this.sociétéLabel1.Name = "sociétéLabel1";
-            this.sociétéLabel1.Size = new System.Drawing.Size(427, 26);
-            this.sociétéLabel1.TabIndex = 4;
-            this.sociétéLabel1.Text = "label1";
-            // 
-            // paysLabel1
-            // 
-            this.paysLabel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.paysLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "Pays", true));
-            this.paysLabel1.Location = new System.Drawing.Point(107, 122);
-            this.paysLabel1.Name = "paysLabel1";
-            this.paysLabel1.Size = new System.Drawing.Size(427, 13);
-            this.paysLabel1.TabIndex = 6;
-            this.paysLabel1.Text = "label1";
-            // 
-            // téléphoneLabel1
-            // 
-            this.téléphoneLabel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.téléphoneLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "Téléphone", true));
-            this.téléphoneLabel1.Location = new System.Drawing.Point(107, 153);
-            this.téléphoneLabel1.Name = "téléphoneLabel1";
-            this.téléphoneLabel1.Size = new System.Drawing.Size(427, 23);
-            this.téléphoneLabel1.TabIndex = 8;
-            this.téléphoneLabel1.Text = "label1";
-            // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataMember = "FK_Customers_Orders";
-            this.ordersBindingSource.DataSource = this.customersBindingSource;
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 41);
             // 
             // ordersDataGridView
             // 
@@ -275,56 +201,13 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn5});
             this.ordersDataGridView.DataSource = this.ordersBindingSource;
-            this.ordersDataGridView.Location = new System.Drawing.Point(12, 196);
+            this.ordersDataGridView.Location = new System.Drawing.Point(18, 302);
+            this.ordersDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ordersDataGridView.Name = "ordersDataGridView";
             this.ordersDataGridView.ReadOnly = true;
             this.ordersDataGridView.RowHeadersWidth = 82;
-            this.ordersDataGridView.Size = new System.Drawing.Size(892, 458);
+            this.ordersDataGridView.Size = new System.Drawing.Size(1338, 705);
             this.ordersDataGridView.TabIndex = 11;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Numéro de la commande";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Numéro de la commande";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Date de commande";
-            dataGridViewCellStyle5.Format = "D";
-            dataGridViewCellStyle5.NullValue = null;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Date de commande";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Date requise";
-            dataGridViewCellStyle6.Format = "D";
-            dataGridViewCellStyle6.NullValue = null;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Date requise";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Vendeur";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Vendeur";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 200;
             // 
             // customersTableAdapter
             // 
@@ -340,31 +223,159 @@
             // 
             this.ordersTableAdapter.ClearBeforeFill = true;
             // 
+            // code_du_clientTextBox
+            // 
+            this.code_du_clientTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "Code du client", true));
+            this.code_du_clientTextBox.Location = new System.Drawing.Point(160, 89);
+            this.code_du_clientTextBox.Name = "code_du_clientTextBox";
+            this.code_du_clientTextBox.Size = new System.Drawing.Size(268, 26);
+            this.code_du_clientTextBox.TabIndex = 12;
+            // 
+            // sociétéTextBox
+            // 
+            this.sociétéTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "Société", true));
+            this.sociétéTextBox.Location = new System.Drawing.Point(160, 140);
+            this.sociétéTextBox.Name = "sociétéTextBox";
+            this.sociétéTextBox.Size = new System.Drawing.Size(268, 26);
+            this.sociétéTextBox.TabIndex = 13;
+            // 
+            // paysTextBox
+            // 
+            this.paysTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "Pays", true));
+            this.paysTextBox.Location = new System.Drawing.Point(160, 188);
+            this.paysTextBox.Name = "paysTextBox";
+            this.paysTextBox.Size = new System.Drawing.Size(268, 26);
+            this.paysTextBox.TabIndex = 14;
+            // 
+            // téléphoneTextBox
+            // 
+            this.téléphoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "Téléphone", true));
+            this.téléphoneTextBox.Location = new System.Drawing.Point(160, 235);
+            this.téléphoneTextBox.Name = "téléphoneTextBox";
+            this.téléphoneTextBox.Size = new System.Drawing.Size(268, 26);
+            this.téléphoneTextBox.TabIndex = 15;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Numéro de la commande";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Numéro de la commande";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Date de commande";
+            dataGridViewCellStyle2.Format = "D";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Date de commande";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Date requise";
+            dataGridViewCellStyle3.Format = "D";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Date requise";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Vendeur";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Vendeur";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 200;
+            // 
+            // ordersBindingSource
+            // 
+            this.ordersBindingSource.DataMember = "FK_Customers_Orders";
+            this.ordersBindingSource.DataSource = this.customersBindingSource;
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(36, 36);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(36, 36);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(36, 36);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(36, 36);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
             // printToolStripButton
             // 
             this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.printToolStripButton.Image = global::devoir2.Properties.Resources.printer;
             this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printToolStripButton.Name = "printToolStripButton";
-            this.printToolStripButton.Size = new System.Drawing.Size(46, 36);
-            this.printToolStripButton.Text = "toolStripButton1";
+            this.printToolStripButton.Size = new System.Drawing.Size(36, 36);
+            this.printToolStripButton.Text = "Imprimer";
             this.printToolStripButton.Click += new System.EventHandler(this.printToolStripButton_Click);
+            // 
+            // filtrerToolStripButton
+            // 
+            this.filtrerToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.filtrerToolStripButton.Image = global::devoir2.Properties.Resources.filter;
+            this.filtrerToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.filtrerToolStripButton.Name = "filtrerToolStripButton";
+            this.filtrerToolStripButton.Size = new System.Drawing.Size(36, 36);
+            this.filtrerToolStripButton.Text = "Filtrer";
+            this.filtrerToolStripButton.Click += new System.EventHandler(this.filtrerToolStripButton_Click);
             // 
             // CdeClientVilleMPForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(905, 666);
+            this.ClientSize = new System.Drawing.Size(1376, 1027);
+            this.Controls.Add(this.téléphoneTextBox);
+            this.Controls.Add(this.paysTextBox);
+            this.Controls.Add(this.sociétéTextBox);
+            this.Controls.Add(this.code_du_clientTextBox);
             this.Controls.Add(this.ordersDataGridView);
             this.Controls.Add(code_du_clientLabel);
-            this.Controls.Add(this.code_du_clientLabel1);
             this.Controls.Add(sociétéLabel);
-            this.Controls.Add(this.sociétéLabel1);
             this.Controls.Add(paysLabel);
-            this.Controls.Add(this.paysLabel1);
             this.Controls.Add(téléphoneLabel);
-            this.Controls.Add(this.téléphoneLabel1);
             this.Controls.Add(this.customersBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "CdeClientVilleMPForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -375,8 +386,8 @@
             this.customersBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,10 +409,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.Label code_du_clientLabel1;
-        private System.Windows.Forms.Label sociétéLabel1;
-        private System.Windows.Forms.Label paysLabel1;
-        private System.Windows.Forms.Label téléphoneLabel1;
         private System.Windows.Forms.BindingSource ordersBindingSource;
         private NorthwindDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter;
         private System.Windows.Forms.DataGridView ordersDataGridView;
@@ -410,5 +417,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.ToolStripButton printToolStripButton;
+        private System.Windows.Forms.TextBox code_du_clientTextBox;
+        private System.Windows.Forms.TextBox sociétéTextBox;
+        private System.Windows.Forms.TextBox paysTextBox;
+        private System.Windows.Forms.TextBox téléphoneTextBox;
+        private System.Windows.Forms.ToolStripButton filtrerToolStripButton;
     }
 }
