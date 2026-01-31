@@ -29,20 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CdeClientVilleMPForm));
             System.Windows.Forms.Label code_du_clientLabel;
             System.Windows.Forms.Label sociétéLabel;
             System.Windows.Forms.Label paysLabel;
             System.Windows.Forms.Label téléphoneLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CdeClientVilleMPForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.customersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.northwindDataSet = new devoir2.NorthwindDataSet();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
@@ -53,26 +55,61 @@
             this.téléphoneLabel1 = new System.Windows.Forms.Label();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersDataGridView = new System.Windows.Forms.DataGridView();
-            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.northwindDataSet = new devoir2.NorthwindDataSet();
-            this.customersTableAdapter = new devoir2.NorthwindDataSetTableAdapters.CustomersTableAdapter();
-            this.tableAdapterManager = new devoir2.NorthwindDataSetTableAdapters.TableAdapterManager();
-            this.ordersTableAdapter = new devoir2.NorthwindDataSetTableAdapters.OrdersTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customersTableAdapter = new devoir2.NorthwindDataSetTableAdapters.CustomersTableAdapter();
+            this.tableAdapterManager = new devoir2.NorthwindDataSetTableAdapters.TableAdapterManager();
+            this.ordersTableAdapter = new devoir2.NorthwindDataSetTableAdapters.OrdersTableAdapter();
+            this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             code_du_clientLabel = new System.Windows.Forms.Label();
             sociétéLabel = new System.Windows.Forms.Label();
             paysLabel = new System.Windows.Forms.Label();
             téléphoneLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingNavigator)).BeginInit();
             this.customersBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // code_du_clientLabel
+            // 
+            code_du_clientLabel.AutoSize = true;
+            code_du_clientLabel.Location = new System.Drawing.Point(23, 58);
+            code_du_clientLabel.Name = "code_du_clientLabel";
+            code_du_clientLabel.Size = new System.Drawing.Size(78, 13);
+            code_du_clientLabel.TabIndex = 1;
+            code_du_clientLabel.Text = "Code du client:";
+            // 
+            // sociétéLabel
+            // 
+            sociétéLabel.AutoSize = true;
+            sociétéLabel.Location = new System.Drawing.Point(23, 91);
+            sociétéLabel.Name = "sociétéLabel";
+            sociétéLabel.Size = new System.Drawing.Size(46, 13);
+            sociétéLabel.TabIndex = 3;
+            sociétéLabel.Text = "Société:";
+            // 
+            // paysLabel
+            // 
+            paysLabel.AutoSize = true;
+            paysLabel.Location = new System.Drawing.Point(23, 122);
+            paysLabel.Name = "paysLabel";
+            paysLabel.Size = new System.Drawing.Size(33, 13);
+            paysLabel.TabIndex = 5;
+            paysLabel.Text = "Pays:";
+            // 
+            // téléphoneLabel
+            // 
+            téléphoneLabel.AutoSize = true;
+            téléphoneLabel.Location = new System.Drawing.Point(23, 153);
+            téléphoneLabel.Name = "téléphoneLabel";
+            téléphoneLabel.Size = new System.Drawing.Size(61, 13);
+            téléphoneLabel.TabIndex = 7;
+            téléphoneLabel.Text = "Téléphone:";
             // 
             // customersBindingNavigator
             // 
@@ -90,7 +127,8 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2});
+            this.bindingNavigatorSeparator2,
+            this.printToolStripButton});
             this.customersBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.customersBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.customersBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -101,6 +139,23 @@
             this.customersBindingNavigator.Size = new System.Drawing.Size(905, 42);
             this.customersBindingNavigator.TabIndex = 0;
             this.customersBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // customersBindingSource
+            // 
+            this.customersBindingSource.DataMember = "Customers";
+            this.customersBindingSource.DataSource = this.northwindDataSet;
+            // 
+            // northwindDataSet
+            // 
+            this.northwindDataSet.DataSetName = "NorthwindDataSet";
+            this.northwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(70, 36);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -135,16 +190,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(70, 36);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 42);
             // 
             // bindingNavigatorMoveNextItem
@@ -167,17 +215,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 42);
-            // 
-            // code_du_clientLabel
-            // 
-            code_du_clientLabel.AutoSize = true;
-            code_du_clientLabel.Location = new System.Drawing.Point(23, 58);
-            code_du_clientLabel.Name = "code_du_clientLabel";
-            code_du_clientLabel.Size = new System.Drawing.Size(78, 13);
-            code_du_clientLabel.TabIndex = 1;
-            code_du_clientLabel.Text = "Code du client:";
             // 
             // code_du_clientLabel1
             // 
@@ -189,15 +228,6 @@
             this.code_du_clientLabel1.TabIndex = 2;
             this.code_du_clientLabel1.Text = "label1";
             // 
-            // sociétéLabel
-            // 
-            sociétéLabel.AutoSize = true;
-            sociétéLabel.Location = new System.Drawing.Point(23, 91);
-            sociétéLabel.Name = "sociétéLabel";
-            sociétéLabel.Size = new System.Drawing.Size(46, 13);
-            sociétéLabel.TabIndex = 3;
-            sociétéLabel.Text = "Société:";
-            // 
             // sociétéLabel1
             // 
             this.sociétéLabel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -208,15 +238,6 @@
             this.sociétéLabel1.TabIndex = 4;
             this.sociétéLabel1.Text = "label1";
             // 
-            // paysLabel
-            // 
-            paysLabel.AutoSize = true;
-            paysLabel.Location = new System.Drawing.Point(23, 122);
-            paysLabel.Name = "paysLabel";
-            paysLabel.Size = new System.Drawing.Size(33, 13);
-            paysLabel.TabIndex = 5;
-            paysLabel.Text = "Pays:";
-            // 
             // paysLabel1
             // 
             this.paysLabel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -226,15 +247,6 @@
             this.paysLabel1.Size = new System.Drawing.Size(427, 13);
             this.paysLabel1.TabIndex = 6;
             this.paysLabel1.Text = "label1";
-            // 
-            // téléphoneLabel
-            // 
-            téléphoneLabel.AutoSize = true;
-            téléphoneLabel.Location = new System.Drawing.Point(23, 153);
-            téléphoneLabel.Name = "téléphoneLabel";
-            téléphoneLabel.Size = new System.Drawing.Size(61, 13);
-            téléphoneLabel.TabIndex = 7;
-            téléphoneLabel.Text = "Téléphone:";
             // 
             // téléphoneLabel1
             // 
@@ -269,30 +281,6 @@
             this.ordersDataGridView.RowHeadersWidth = 82;
             this.ordersDataGridView.Size = new System.Drawing.Size(892, 458);
             this.ordersDataGridView.TabIndex = 11;
-            // 
-            // customersBindingSource
-            // 
-            this.customersBindingSource.DataMember = "Customers";
-            this.customersBindingSource.DataSource = this.northwindDataSet;
-            // 
-            // northwindDataSet
-            // 
-            this.northwindDataSet.DataSetName = "NorthwindDataSet";
-            this.northwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customersTableAdapter
-            // 
-            this.customersTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.UpdateOrder = devoir2.NorthwindDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // ordersTableAdapter
-            // 
-            this.ordersTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -338,6 +326,30 @@
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 200;
             // 
+            // customersTableAdapter
+            // 
+            this.customersTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.UpdateOrder = devoir2.NorthwindDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // ordersTableAdapter
+            // 
+            this.ordersTableAdapter.ClearBeforeFill = true;
+            // 
+            // printToolStripButton
+            // 
+            this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.printToolStripButton.Image = global::devoir2.Properties.Resources.printer;
+            this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printToolStripButton.Name = "printToolStripButton";
+            this.printToolStripButton.Size = new System.Drawing.Size(46, 36);
+            this.printToolStripButton.Text = "toolStripButton1";
+            this.printToolStripButton.Click += new System.EventHandler(this.printToolStripButton_Click);
+            // 
             // CdeClientVilleMPForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,10 +373,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingNavigator)).EndInit();
             this.customersBindingNavigator.ResumeLayout(false);
             this.customersBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,5 +409,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.ToolStripButton printToolStripButton;
     }
 }
