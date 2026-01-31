@@ -78,6 +78,14 @@ namespace devoir2
                 //limiter la taille de la colonne largeur à la taille du contenu
                 ordersDataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
+                //culture pour le formatage de la date en anglais
+                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                ordersDataGridView.Columns[1].DefaultCellStyle.FormatProvider = culture;
+                ordersDataGridView.Columns[1].DefaultCellStyle.Format = "MMMM d, yyyy";
+                // meme chose pour la colonne 2
+                ordersDataGridView.Columns[2].DefaultCellStyle.FormatProvider = culture;
+                ordersDataGridView.Columns[2].DefaultCellStyle.Format = "MMMM d, yyyy";
+
             }
             catch (Exception ex)
             {
