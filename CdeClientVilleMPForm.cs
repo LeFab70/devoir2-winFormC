@@ -180,11 +180,11 @@ namespace devoir2
                     var customer = (NorthwindDataSet.CustomersRow)customerView.Row;
 
                     // Affichage Parent
-                    Console.WriteLine("{0,-8} {1,-45} {2,-15} {3}",
+                    Console.WriteLine(String.Format("{0,-8} {1,-45} {2,-15} {3}",
                         customer.Code_du_client,
                         customer.Société,
                         customer.Pays,
-                        customer.Téléphone);
+                        customer.Téléphone));
 
                     // 5. Filtrage et affichage des commandes (Enfants)
                     this.ordersBindingSource.Filter = "CustomerID = '" + customer.Code_du_client + "'";
@@ -195,9 +195,9 @@ namespace devoir2
                         string dateFormatee = order.Date_de_commande.ToString("MMMM d, yyyy",
                                               new System.Globalization.CultureInfo("en-US"));
 
-                        Console.WriteLine("          {0,-10} {1}",
+                        Console.WriteLine(String.Format("          {0,-10} {1}",
                             order.Numéro_de_la_commande,
-                            dateFormatee);
+                            dateFormatee));
                     }
 
                     this.ordersBindingSource.RemoveFilter();
