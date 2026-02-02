@@ -1,0 +1,1070 @@
+<?xml version="1.0" standalone="yes"?>
+<VentesDataSet xmlns="http://tempuri.org/VentesDataSet.xsd">
+  <xs:schema id="VentesDataSet" targetNamespace="http://tempuri.org/VentesDataSet.xsd" xmlns:mstns="http://tempuri.org/VentesDataSet.xsd" xmlns="http://tempuri.org/VentesDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+    <xs:element name="VentesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="ClientsVilleMetP">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="CustomerID">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="5" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="CompanyName">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="40" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="Country" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="15" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="Phone" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="24" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="CommandesClients">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="OrderID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" type="xs:int" />
+                <xs:element name="OrderDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="RequiredDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="CustomerID" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="5" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="NomPrenomVendeur" msdata:ReadOnly="true" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="32" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="City" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="15" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//mstns:ClientsVilleMetP" />
+        <xs:field xpath="mstns:CustomerID" />
+      </xs:unique>
+      <xs:unique name="CommandesClients_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//mstns:CommandesClients" />
+        <xs:field xpath="mstns:OrderID" />
+      </xs:unique>
+    </xs:element>
+    <xs:annotation>
+      <xs:appinfo>
+        <msdata:Relationship name="ClientsVilleMetP_Orders" msdata:parent="ClientsVilleMetP" msdata:child="CommandesClients" msdata:parentkey="CustomerID" msdata:childkey="CustomerID" />
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:schema>
+  <ClientsVilleMetP>
+    <CustomerID>TORTU</CustomerID>
+    <CompanyName>Tortuga Restaurante</CompanyName>
+    <Country>Mexico</Country>
+    <Phone>(5) 555-2933</Phone>
+  </ClientsVilleMetP>
+  <ClientsVilleMetP>
+    <CustomerID>TOMSP</CustomerID>
+    <CompanyName>Toms Spezialitäten</CompanyName>
+    <Country>Germany</Country>
+    <Phone>0251-031259</Phone>
+  </ClientsVilleMetP>
+  <ClientsVilleMetP>
+    <CustomerID>THEBI</CustomerID>
+    <CompanyName>The Big Cheese</CompanyName>
+    <Country>USA</Country>
+    <Phone>(503) 555-3612</Phone>
+  </ClientsVilleMetP>
+  <ClientsVilleMetP>
+    <CustomerID>SPECD</CustomerID>
+    <CompanyName>Spécialités du monde</CompanyName>
+    <Country>France</Country>
+    <Phone>(1) 47.55.60.10</Phone>
+  </ClientsVilleMetP>
+  <ClientsVilleMetP>
+    <CustomerID>ROMEY</CustomerID>
+    <CompanyName>Romero y tomillo</CompanyName>
+    <Country>Spain</Country>
+    <Phone>(91) 745 6200</Phone>
+  </ClientsVilleMetP>
+  <ClientsVilleMetP>
+    <CustomerID>PERIC</CustomerID>
+    <CompanyName>Pericles Comidas clásicas</CompanyName>
+    <Country>Mexico</Country>
+    <Phone>(5) 552-3745</Phone>
+  </ClientsVilleMetP>
+  <ClientsVilleMetP>
+    <CustomerID>PARIS</CustomerID>
+    <CompanyName>Paris spécialités</CompanyName>
+    <Country>France</Country>
+    <Phone>(1) 42.34.22.66</Phone>
+  </ClientsVilleMetP>
+  <ClientsVilleMetP>
+    <CustomerID>MEREP</CustomerID>
+    <CompanyName>Mère Paillarde</CompanyName>
+    <Country>Canada</Country>
+    <Phone>(514) 555-8054</Phone>
+  </ClientsVilleMetP>
+  <ClientsVilleMetP>
+    <CustomerID>LONEP</CustomerID>
+    <CompanyName>Lonesome Pine Restaurant</CompanyName>
+    <Country>USA</Country>
+    <Phone>(503) 555-9573</Phone>
+  </ClientsVilleMetP>
+  <ClientsVilleMetP>
+    <CustomerID>FRANK</CustomerID>
+    <CompanyName>Frankenversand</CompanyName>
+    <Country>Germany</Country>
+    <Phone>089-0877310</Phone>
+  </ClientsVilleMetP>
+  <ClientsVilleMetP>
+    <CustomerID>FISSA</CustomerID>
+    <CompanyName>FISSA Fabrica Inter. Salchichas S.A.</CompanyName>
+    <Country>Spain</Country>
+    <Phone>(91) 555 94 44</Phone>
+  </ClientsVilleMetP>
+  <ClientsVilleMetP>
+    <CustomerID>CENTC</CustomerID>
+    <CompanyName>Centro comercial Moctezuma</CompanyName>
+    <Country>Mexico</Country>
+    <Phone>(5) 555-3392</Phone>
+  </ClientsVilleMetP>
+  <ClientsVilleMetP>
+    <CustomerID>BONAP</CustomerID>
+    <CompanyName>Bon app'</CompanyName>
+    <Country>France</Country>
+    <Phone>91.24.45.40</Phone>
+  </ClientsVilleMetP>
+  <ClientsVilleMetP>
+    <CustomerID>BOLID</CustomerID>
+    <CompanyName>Bólido Comidas preparadas</CompanyName>
+    <Country>Spain</Country>
+    <Phone>(91) 555 22 82</Phone>
+  </ClientsVilleMetP>
+  <ClientsVilleMetP>
+    <CustomerID>BLAUS</CustomerID>
+    <CompanyName>Blauer See Delikatessen</CompanyName>
+    <Country>Germany</Country>
+    <Phone>0621-08460</Phone>
+  </ClientsVilleMetP>
+  <ClientsVilleMetP>
+    <CustomerID>ANTON</CustomerID>
+    <CompanyName>Antonio Moreno Taquería</CompanyName>
+    <Country>Mexico</Country>
+    <Phone>(5) 555-3932</Phone>
+  </ClientsVilleMetP>
+  <ClientsVilleMetP>
+    <CustomerID>ANATR</CustomerID>
+    <CompanyName>Ana Trujillo Emparedados y helados</CompanyName>
+    <Country>Mexico</Country>
+    <Phone>(5) 555-4729</Phone>
+  </ClientsVilleMetP>
+  <CommandesClients>
+    <OrderID>11076</OrderID>
+    <OrderDate>1998-05-06T00:00:00-03:00</OrderDate>
+    <RequiredDate>1998-06-03T00:00:00-03:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>11073</OrderID>
+    <OrderDate>1998-05-05T00:00:00-03:00</OrderDate>
+    <RequiredDate>1998-06-02T00:00:00-03:00</RequiredDate>
+    <CustomerID>PERIC</CustomerID>
+    <NomPrenomVendeur>Fuller, Andrew</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>11069</OrderID>
+    <OrderDate>1998-05-04T00:00:00-03:00</OrderDate>
+    <RequiredDate>1998-06-01T00:00:00-03:00</RequiredDate>
+    <CustomerID>TORTU</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>11058</OrderID>
+    <OrderDate>1998-04-29T00:00:00-03:00</OrderDate>
+    <RequiredDate>1998-05-27T00:00:00-03:00</RequiredDate>
+    <CustomerID>BLAUS</CustomerID>
+    <NomPrenomVendeur>Dodsworth, Anne</NomPrenomVendeur>
+    <City>Mannheim</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>11043</OrderID>
+    <OrderDate>1998-04-22T00:00:00-03:00</OrderDate>
+    <RequiredDate>1998-05-20T00:00:00-03:00</RequiredDate>
+    <CustomerID>SPECD</CustomerID>
+    <NomPrenomVendeur>Buchanan, Steven</NomPrenomVendeur>
+    <City>Paris</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>11018</OrderID>
+    <OrderDate>1998-04-13T00:00:00-03:00</OrderDate>
+    <RequiredDate>1998-05-11T00:00:00-03:00</RequiredDate>
+    <CustomerID>LONEP</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>Portland</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>11013</OrderID>
+    <OrderDate>1998-04-09T00:00:00-03:00</OrderDate>
+    <RequiredDate>1998-05-07T00:00:00-03:00</RequiredDate>
+    <CustomerID>ROMEY</CustomerID>
+    <NomPrenomVendeur>Fuller, Andrew</NomPrenomVendeur>
+    <City>Madrid</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10995</OrderID>
+    <OrderDate>1998-04-02T00:00:00-03:00</OrderDate>
+    <RequiredDate>1998-04-30T00:00:00-03:00</RequiredDate>
+    <CustomerID>PERIC</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10992</OrderID>
+    <OrderDate>1998-04-01T00:00:00-03:00</OrderDate>
+    <RequiredDate>1998-04-29T00:00:00-03:00</RequiredDate>
+    <CustomerID>THEBI</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>Portland</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10956</OrderID>
+    <OrderDate>1998-03-17T00:00:00-03:00</OrderDate>
+    <RequiredDate>1998-04-28T00:00:00-03:00</RequiredDate>
+    <CustomerID>BLAUS</CustomerID>
+    <NomPrenomVendeur>Suyama, Michael</NomPrenomVendeur>
+    <City>Mannheim</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>11012</OrderID>
+    <OrderDate>1998-04-09T00:00:00-03:00</OrderDate>
+    <RequiredDate>1998-04-23T00:00:00-03:00</RequiredDate>
+    <CustomerID>FRANK</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>München</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10967</OrderID>
+    <OrderDate>1998-03-23T00:00:00-03:00</OrderDate>
+    <RequiredDate>1998-04-20T00:00:00-03:00</RequiredDate>
+    <CustomerID>TOMSP</CustomerID>
+    <NomPrenomVendeur>Fuller, Andrew</NomPrenomVendeur>
+    <City>Münster</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10964</OrderID>
+    <OrderDate>1998-03-20T00:00:00-03:00</OrderDate>
+    <RequiredDate>1998-04-17T00:00:00-03:00</RequiredDate>
+    <CustomerID>SPECD</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>Paris</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10940</OrderID>
+    <OrderDate>1998-03-11T00:00:00-03:00</OrderDate>
+    <RequiredDate>1998-04-08T00:00:00-03:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>Callahan, Laura</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10970</OrderID>
+    <OrderDate>1998-03-24T00:00:00-03:00</OrderDate>
+    <RequiredDate>1998-04-07T00:00:00-03:00</RequiredDate>
+    <CustomerID>BOLID</CustomerID>
+    <NomPrenomVendeur>Dodsworth, Anne</NomPrenomVendeur>
+    <City>Madrid</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10932</OrderID>
+    <OrderDate>1998-03-06T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-04-03T00:00:00-03:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>Callahan, Laura</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10929</OrderID>
+    <OrderDate>1998-03-05T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-04-02T00:00:00-03:00</RequiredDate>
+    <CustomerID>FRANK</CustomerID>
+    <NomPrenomVendeur>Suyama, Michael</NomPrenomVendeur>
+    <City>München</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10926</OrderID>
+    <OrderDate>1998-03-04T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-04-01T00:00:00-03:00</RequiredDate>
+    <CustomerID>ANATR</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10917</OrderID>
+    <OrderDate>1998-03-02T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-03-30T00:00:00-03:00</RequiredDate>
+    <CustomerID>ROMEY</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>Madrid</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10915</OrderID>
+    <OrderDate>1998-02-27T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-03-27T00:00:00-03:00</RequiredDate>
+    <CustomerID>TORTU</CustomerID>
+    <NomPrenomVendeur>Fuller, Andrew</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10907</OrderID>
+    <OrderDate>1998-02-25T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-03-25T00:00:00-03:00</RequiredDate>
+    <CustomerID>SPECD</CustomerID>
+    <NomPrenomVendeur>Suyama, Michael</NomPrenomVendeur>
+    <City>Paris</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10867</OrderID>
+    <OrderDate>1998-02-03T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-03-17T00:00:00-03:00</RequiredDate>
+    <CustomerID>LONEP</CustomerID>
+    <NomPrenomVendeur>Suyama, Michael</NomPrenomVendeur>
+    <City>Portland</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10883</OrderID>
+    <OrderDate>1998-02-12T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-03-12T00:00:00-03:00</RequiredDate>
+    <CustomerID>LONEP</CustomerID>
+    <NomPrenomVendeur>Callahan, Laura</NomPrenomVendeur>
+    <City>Portland</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10876</OrderID>
+    <OrderDate>1998-02-09T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-03-09T00:00:00-03:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>King, Robert</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10871</OrderID>
+    <OrderDate>1998-02-05T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-03-05T00:00:00-04:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>Dodsworth, Anne</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10859</OrderID>
+    <OrderDate>1998-01-29T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-02-26T00:00:00-04:00</RequiredDate>
+    <CustomerID>FRANK</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>München</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10856</OrderID>
+    <OrderDate>1998-01-28T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-02-25T00:00:00-04:00</RequiredDate>
+    <CustomerID>ANTON</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10853</OrderID>
+    <OrderDate>1998-01-27T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-02-24T00:00:00-04:00</RequiredDate>
+    <CustomerID>BLAUS</CustomerID>
+    <NomPrenomVendeur>Dodsworth, Anne</NomPrenomVendeur>
+    <City>Mannheim</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10842</OrderID>
+    <OrderDate>1998-01-20T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-02-17T00:00:00-04:00</RequiredDate>
+    <CustomerID>TORTU</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10805</OrderID>
+    <OrderDate>1997-12-30T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-01-27T00:00:00-04:00</RequiredDate>
+    <CustomerID>THEBI</CustomerID>
+    <NomPrenomVendeur>Fuller, Andrew</NomPrenomVendeur>
+    <City>Portland</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10827</OrderID>
+    <OrderDate>1998-01-12T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-01-26T00:00:00-04:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10801</OrderID>
+    <OrderDate>1997-12-29T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-01-26T00:00:00-04:00</RequiredDate>
+    <CustomerID>BOLID</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>Madrid</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10791</OrderID>
+    <OrderDate>1997-12-23T00:00:00-04:00</OrderDate>
+    <RequiredDate>1998-01-20T00:00:00-04:00</RequiredDate>
+    <CustomerID>FRANK</CustomerID>
+    <NomPrenomVendeur>Suyama, Michael</NomPrenomVendeur>
+    <City>München</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10759</OrderID>
+    <OrderDate>1997-11-28T00:00:00-04:00</OrderDate>
+    <RequiredDate>1997-12-26T00:00:00-04:00</RequiredDate>
+    <CustomerID>ANATR</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10755</OrderID>
+    <OrderDate>1997-11-26T00:00:00-04:00</OrderDate>
+    <RequiredDate>1997-12-24T00:00:00-04:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10724</OrderID>
+    <OrderDate>1997-10-30T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-12-11T00:00:00-04:00</RequiredDate>
+    <CustomerID>MEREP</CustomerID>
+    <NomPrenomVendeur>Callahan, Laura</NomPrenomVendeur>
+    <City>Montréal</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10738</OrderID>
+    <OrderDate>1997-11-12T00:00:00-04:00</OrderDate>
+    <RequiredDate>1997-12-10T00:00:00-04:00</RequiredDate>
+    <CustomerID>SPECD</CustomerID>
+    <NomPrenomVendeur>Fuller, Andrew</NomPrenomVendeur>
+    <City>Paris</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10732</OrderID>
+    <OrderDate>1997-11-06T00:00:00-04:00</OrderDate>
+    <RequiredDate>1997-12-04T00:00:00-04:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10730</OrderID>
+    <OrderDate>1997-11-05T00:00:00-04:00</OrderDate>
+    <RequiredDate>1997-12-03T00:00:00-04:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>Buchanan, Steven</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10708</OrderID>
+    <OrderDate>1997-10-17T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-11-28T00:00:00-04:00</RequiredDate>
+    <CustomerID>THEBI</CustomerID>
+    <NomPrenomVendeur>Suyama, Michael</NomPrenomVendeur>
+    <City>Portland</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10717</OrderID>
+    <OrderDate>1997-10-24T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-11-21T00:00:00-04:00</RequiredDate>
+    <CustomerID>FRANK</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>München</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10715</OrderID>
+    <OrderDate>1997-10-23T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-11-06T00:00:00-04:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10682</OrderID>
+    <OrderDate>1997-09-25T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-10-23T00:00:00-03:00</RequiredDate>
+    <CustomerID>ANTON</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10676</OrderID>
+    <OrderDate>1997-09-22T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-10-20T00:00:00-03:00</RequiredDate>
+    <CustomerID>TORTU</CustomerID>
+    <NomPrenomVendeur>Fuller, Andrew</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10677</OrderID>
+    <OrderDate>1997-09-22T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-10-20T00:00:00-03:00</RequiredDate>
+    <CustomerID>ANTON</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10675</OrderID>
+    <OrderDate>1997-09-19T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-10-17T00:00:00-03:00</RequiredDate>
+    <CustomerID>FRANK</CustomerID>
+    <NomPrenomVendeur>Buchanan, Steven</NomPrenomVendeur>
+    <City>München</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10670</OrderID>
+    <OrderDate>1997-09-16T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-10-14T00:00:00-03:00</RequiredDate>
+    <CustomerID>FRANK</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>München</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10665</OrderID>
+    <OrderDate>1997-09-11T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-10-09T00:00:00-03:00</RequiredDate>
+    <CustomerID>LONEP</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>Portland</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10662</OrderID>
+    <OrderDate>1997-09-09T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-10-07T00:00:00-03:00</RequiredDate>
+    <CustomerID>LONEP</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>Portland</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10653</OrderID>
+    <OrderDate>1997-09-02T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-09-30T00:00:00-03:00</RequiredDate>
+    <CustomerID>FRANK</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>München</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10663</OrderID>
+    <OrderDate>1997-09-10T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-09-24T00:00:00-03:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>Fuller, Andrew</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10618</OrderID>
+    <OrderDate>1997-08-01T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-09-12T00:00:00-03:00</RequiredDate>
+    <CustomerID>MEREP</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>Montréal</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10625</OrderID>
+    <OrderDate>1997-08-08T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-09-05T00:00:00-03:00</RequiredDate>
+    <CustomerID>ANATR</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10623</OrderID>
+    <OrderDate>1997-08-07T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-09-04T00:00:00-03:00</RequiredDate>
+    <CustomerID>FRANK</CustomerID>
+    <NomPrenomVendeur>Callahan, Laura</NomPrenomVendeur>
+    <City>München</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10619</OrderID>
+    <OrderDate>1997-08-04T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-09-01T00:00:00-03:00</RequiredDate>
+    <CustomerID>MEREP</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>Montréal</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10614</OrderID>
+    <OrderDate>1997-07-29T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-08-26T00:00:00-03:00</RequiredDate>
+    <CustomerID>BLAUS</CustomerID>
+    <NomPrenomVendeur>Callahan, Laura</NomPrenomVendeur>
+    <City>Mannheim</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10608</OrderID>
+    <OrderDate>1997-07-23T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-08-20T00:00:00-03:00</RequiredDate>
+    <CustomerID>TOMSP</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>Münster</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10605</OrderID>
+    <OrderDate>1997-07-21T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-08-18T00:00:00-03:00</RequiredDate>
+    <CustomerID>MEREP</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>Montréal</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10590</OrderID>
+    <OrderDate>1997-07-07T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-08-04T00:00:00-03:00</RequiredDate>
+    <CustomerID>MEREP</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>Montréal</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10582</OrderID>
+    <OrderDate>1997-06-27T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-07-25T00:00:00-03:00</RequiredDate>
+    <CustomerID>BLAUS</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>Mannheim</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10573</OrderID>
+    <OrderDate>1997-06-19T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-07-17T00:00:00-03:00</RequiredDate>
+    <CustomerID>ANTON</CustomerID>
+    <NomPrenomVendeur>King, Robert</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10570</OrderID>
+    <OrderDate>1997-06-17T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-07-15T00:00:00-03:00</RequiredDate>
+    <CustomerID>MEREP</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>Montréal</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10565</OrderID>
+    <OrderDate>1997-06-11T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-07-09T00:00:00-03:00</RequiredDate>
+    <CustomerID>MEREP</CustomerID>
+    <NomPrenomVendeur>Callahan, Laura</NomPrenomVendeur>
+    <City>Montréal</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10576</OrderID>
+    <OrderDate>1997-06-23T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-07-07T00:00:00-03:00</RequiredDate>
+    <CustomerID>TORTU</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10560</OrderID>
+    <OrderDate>1997-06-06T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-07-04T00:00:00-03:00</RequiredDate>
+    <CustomerID>FRANK</CustomerID>
+    <NomPrenomVendeur>Callahan, Laura</NomPrenomVendeur>
+    <City>München</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10548</OrderID>
+    <OrderDate>1997-05-26T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-06-23T00:00:00-03:00</RequiredDate>
+    <CustomerID>TOMSP</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>Münster</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10544</OrderID>
+    <OrderDate>1997-05-21T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-06-18T00:00:00-03:00</RequiredDate>
+    <CustomerID>LONEP</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>Portland</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10535</OrderID>
+    <OrderDate>1997-05-13T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-06-10T00:00:00-03:00</RequiredDate>
+    <CustomerID>ANTON</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10525</OrderID>
+    <OrderDate>1997-05-02T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-05-30T00:00:00-03:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10511</OrderID>
+    <OrderDate>1997-04-18T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-05-16T00:00:00-03:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10509</OrderID>
+    <OrderDate>1997-04-17T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-05-15T00:00:00-03:00</RequiredDate>
+    <CustomerID>BLAUS</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>Mannheim</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10507</OrderID>
+    <OrderDate>1997-04-15T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-05-13T00:00:00-03:00</RequiredDate>
+    <CustomerID>ANTON</CustomerID>
+    <NomPrenomVendeur>King, Robert</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10505</OrderID>
+    <OrderDate>1997-04-14T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-05-12T00:00:00-03:00</RequiredDate>
+    <CustomerID>MEREP</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>Montréal</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10518</OrderID>
+    <OrderDate>1997-04-25T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-05-09T00:00:00-03:00</RequiredDate>
+    <CustomerID>TORTU</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10502</OrderID>
+    <OrderDate>1997-04-10T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-05-08T00:00:00-03:00</RequiredDate>
+    <CustomerID>PERIC</CustomerID>
+    <NomPrenomVendeur>Fuller, Andrew</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10501</OrderID>
+    <OrderDate>1997-04-09T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-05-07T00:00:00-03:00</RequiredDate>
+    <CustomerID>BLAUS</CustomerID>
+    <NomPrenomVendeur>Dodsworth, Anne</NomPrenomVendeur>
+    <City>Mannheim</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10488</OrderID>
+    <OrderDate>1997-03-27T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-04-24T00:00:00-03:00</RequiredDate>
+    <CustomerID>FRANK</CustomerID>
+    <NomPrenomVendeur>Callahan, Laura</NomPrenomVendeur>
+    <City>München</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10474</OrderID>
+    <OrderDate>1997-03-13T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-04-10T00:00:00-03:00</RequiredDate>
+    <CustomerID>PERIC</CustomerID>
+    <NomPrenomVendeur>Buchanan, Steven</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10470</OrderID>
+    <OrderDate>1997-03-11T00:00:00-03:00</OrderDate>
+    <RequiredDate>1997-04-08T00:00:00-03:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10446</OrderID>
+    <OrderDate>1997-02-14T00:00:00-04:00</OrderDate>
+    <RequiredDate>1997-03-14T00:00:00-03:00</RequiredDate>
+    <CustomerID>TOMSP</CustomerID>
+    <NomPrenomVendeur>Suyama, Michael</NomPrenomVendeur>
+    <City>Münster</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10439</OrderID>
+    <OrderDate>1997-02-07T00:00:00-04:00</OrderDate>
+    <RequiredDate>1997-03-07T00:00:00-04:00</RequiredDate>
+    <CustomerID>MEREP</CustomerID>
+    <NomPrenomVendeur>Suyama, Michael</NomPrenomVendeur>
+    <City>Montréal</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10438</OrderID>
+    <OrderDate>1997-02-06T00:00:00-04:00</OrderDate>
+    <RequiredDate>1997-03-06T00:00:00-04:00</RequiredDate>
+    <CustomerID>TOMSP</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>Münster</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10424</OrderID>
+    <OrderDate>1997-01-23T00:00:00-04:00</OrderDate>
+    <RequiredDate>1997-02-20T00:00:00-04:00</RequiredDate>
+    <CustomerID>MEREP</CustomerID>
+    <NomPrenomVendeur>King, Robert</NomPrenomVendeur>
+    <City>Montréal</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10396</OrderID>
+    <OrderDate>1996-12-27T00:00:00-04:00</OrderDate>
+    <RequiredDate>1997-01-10T00:00:00-04:00</RequiredDate>
+    <CustomerID>FRANK</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>München</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10376</OrderID>
+    <OrderDate>1996-12-09T00:00:00-04:00</OrderDate>
+    <RequiredDate>1997-01-06T00:00:00-04:00</RequiredDate>
+    <CustomerID>MEREP</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>Montréal</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10365</OrderID>
+    <OrderDate>1996-11-27T00:00:00-04:00</OrderDate>
+    <RequiredDate>1996-12-25T00:00:00-04:00</RequiredDate>
+    <CustomerID>ANTON</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10362</OrderID>
+    <OrderDate>1996-11-25T00:00:00-04:00</OrderDate>
+    <RequiredDate>1996-12-23T00:00:00-04:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10354</OrderID>
+    <OrderDate>1996-11-14T00:00:00-04:00</OrderDate>
+    <RequiredDate>1996-12-12T00:00:00-04:00</RequiredDate>
+    <CustomerID>PERIC</CustomerID>
+    <NomPrenomVendeur>Callahan, Laura</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10332</OrderID>
+    <OrderDate>1996-10-17T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-11-28T00:00:00-04:00</RequiredDate>
+    <CustomerID>MEREP</CustomerID>
+    <NomPrenomVendeur>Leverling, Janet</NomPrenomVendeur>
+    <City>Montréal</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10331</OrderID>
+    <OrderDate>1996-10-16T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-11-27T00:00:00-04:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>Dodsworth, Anne</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10340</OrderID>
+    <OrderDate>1996-10-29T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-11-26T00:00:00-04:00</RequiredDate>
+    <CustomerID>BONAP</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>Marseille</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10339</OrderID>
+    <OrderDate>1996-10-28T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-11-25T00:00:00-04:00</RequiredDate>
+    <CustomerID>MEREP</CustomerID>
+    <NomPrenomVendeur>Fuller, Andrew</NomPrenomVendeur>
+    <City>Montréal</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10337</OrderID>
+    <OrderDate>1996-10-24T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-11-21T00:00:00-04:00</RequiredDate>
+    <CustomerID>FRANK</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>München</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10342</OrderID>
+    <OrderDate>1996-10-30T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-11-13T00:00:00-04:00</RequiredDate>
+    <CustomerID>FRANK</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>München</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10326</OrderID>
+    <OrderDate>1996-10-10T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-11-07T00:00:00-04:00</RequiredDate>
+    <CustomerID>BOLID</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>Madrid</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10322</OrderID>
+    <OrderDate>1996-10-04T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-11-01T00:00:00-03:00</RequiredDate>
+    <CustomerID>PERIC</CustomerID>
+    <NomPrenomVendeur>King, Robert</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10319</OrderID>
+    <OrderDate>1996-10-02T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-10-30T00:00:00-03:00</RequiredDate>
+    <CustomerID>TORTU</CustomerID>
+    <NomPrenomVendeur>King, Robert</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10317</OrderID>
+    <OrderDate>1996-09-30T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-10-28T00:00:00-03:00</RequiredDate>
+    <CustomerID>LONEP</CustomerID>
+    <NomPrenomVendeur>Suyama, Michael</NomPrenomVendeur>
+    <City>Portland</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10310</OrderID>
+    <OrderDate>1996-09-20T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-10-18T00:00:00-03:00</RequiredDate>
+    <CustomerID>THEBI</CustomerID>
+    <NomPrenomVendeur>Callahan, Laura</NomPrenomVendeur>
+    <City>Portland</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10308</OrderID>
+    <OrderDate>1996-09-18T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-10-16T00:00:00-03:00</RequiredDate>
+    <CustomerID>ANATR</CustomerID>
+    <NomPrenomVendeur>King, Robert</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10307</OrderID>
+    <OrderDate>1996-09-17T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-10-15T00:00:00-03:00</RequiredDate>
+    <CustomerID>LONEP</CustomerID>
+    <NomPrenomVendeur>Fuller, Andrew</NomPrenomVendeur>
+    <City>Portland</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10306</OrderID>
+    <OrderDate>1996-09-16T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-10-14T00:00:00-03:00</RequiredDate>
+    <CustomerID>ROMEY</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>Madrid</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10304</OrderID>
+    <OrderDate>1996-09-12T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-10-10T00:00:00-03:00</RequiredDate>
+    <CustomerID>TORTU</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10293</OrderID>
+    <OrderDate>1996-08-29T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-09-26T00:00:00-03:00</RequiredDate>
+    <CustomerID>TORTU</CustomerID>
+    <NomPrenomVendeur>Davolio, Nancy</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10282</OrderID>
+    <OrderDate>1996-08-15T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-09-12T00:00:00-03:00</RequiredDate>
+    <CustomerID>ROMEY</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>Madrid</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10281</OrderID>
+    <OrderDate>1996-08-14T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-08-28T00:00:00-03:00</RequiredDate>
+    <CustomerID>ROMEY</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>Madrid</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10267</OrderID>
+    <OrderDate>1996-07-29T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-08-26T00:00:00-03:00</RequiredDate>
+    <CustomerID>FRANK</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>München</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10276</OrderID>
+    <OrderDate>1996-08-08T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-08-22T00:00:00-03:00</RequiredDate>
+    <CustomerID>TORTU</CustomerID>
+    <NomPrenomVendeur>Callahan, Laura</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10249</OrderID>
+    <OrderDate>1996-07-05T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-08-16T00:00:00-03:00</RequiredDate>
+    <CustomerID>TOMSP</CustomerID>
+    <NomPrenomVendeur>Suyama, Michael</NomPrenomVendeur>
+    <City>Münster</City>
+  </CommandesClients>
+  <CommandesClients>
+    <OrderID>10259</OrderID>
+    <OrderDate>1996-07-18T00:00:00-03:00</OrderDate>
+    <RequiredDate>1996-08-15T00:00:00-03:00</RequiredDate>
+    <CustomerID>CENTC</CustomerID>
+    <NomPrenomVendeur>Peacock, Margaret</NomPrenomVendeur>
+    <City>México D.F.</City>
+  </CommandesClients>
+</VentesDataSet>

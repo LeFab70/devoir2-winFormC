@@ -18,6 +18,10 @@ Produire un rapport de données hiérarchiques d'un Dataset typé
 
 Produire un rapport d’une vue des données hiérarchiques d’un DataSet typé
 
+******************************* Phase4:********************************
+
+Produire un rapport des données hiérarchiques provenant d’un fichier XML
+
 Info : Base de données : Northwind local (.\sqlexpress)
 Table: Customers,orders,employees 
 */
@@ -210,6 +214,38 @@ namespace devoir2
                 MessageBox.Show("Erreur lors de l'impression : " + ex.Message);
             }
         }
+        #endregion
+
+        #region Rapport a partir du fichier XML
+        private void xmlToolStripButton_Click(object sender, EventArgs e)
+        {
+            DataSet oDataSet;
+            try
+            {
+                oDataSet = new DataSet();
+                oDataSet.ReadXml("..\\..\\Data\\VentesClientsMetP.xml", XmlReadMode.ReadSchema); // Lire le fichier XML avec le schéma
+
+                Console.WriteLine("Clients des villes M et P et leurs commandes respectives\n");
+
+                for (int i = 0; i < oDataSet.Tables[0].Rows.Count; i++) // Parcourir les lignes de la première table
+                {
+                    Console.WriteLine(String.Format("{0} \t {1}", oDataSet.Tables[0].Rows[i][0], oDataSet.Tables[0].Rows[i][1])); // Afficher les informations des clients
+
+                    for (int j = 0; j < oDataSet.Tables[1].Rows.Count; j++) // Parcourir les lignes de la deuxième table
+                    {
+                        if (oDataSet.Tables[0].Rows[i][0].ToString() == oDataSet.Tables[1].Rows[j][3].ToString()) // Vérifier la relation entre les tables
+                        {
+                            Console.WriteLine(String.Format("\t {0} {1:D}", oDataSet.Tables[1].Rows[j][0], oDataSet.Tables[1].Rows[j][1])); // Afficher les informations des commandes
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors du read de xml : " + ex.Message);
+            }
+        }
+
         #endregion
     }
 }

@@ -110,5 +110,9 @@
   <ItemGroup>
     <None Include="Resources\filter.png" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Data\VentesClientsMetP.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
