@@ -164,7 +164,7 @@ namespace devoir2
                 this.ordersTableAdapter.GetOrdersSellers(this.northwindDataSet.Orders);
 
                 Console.WriteLine("Clients des villes M et P des État-Unis seulement et leurs commandes respectives");
-                Console.WriteLine();
+                Console.WriteLine(new string('-', 80));
 
                 // 2. Application du filtre (USA + Villes M/P)
                 this.customersBindingSource.Filter = "Pays = 'USA' AND (City LIKE 'M%' OR City LIKE 'P%')";
@@ -187,23 +187,17 @@ namespace devoir2
                         customer.Téléphone));
 
                     // 5. Filtrage et affichage des commandes (Enfants)
-                    this.ordersBindingSource.Filter = "CustomerID = '" + customer.Code_du_client + "'";
+                    var commandesDuClient = customer.GetOrdersRows();
 
-                    foreach (DataRowView orderView in this.ordersBindingSource)
+                    foreach (NorthwindDataSet.OrdersRow order in commandesDuClient)
                     {
-                        var order = (NorthwindDataSet.OrdersRow)orderView.Row;
                         string dateFormatee = order.Date_de_commande.ToString("MMMM d, yyyy",
                                               new System.Globalization.CultureInfo("en-US"));
-
                         Console.WriteLine(String.Format("          {0,-10} {1}",
                             order.Numéro_de_la_commande,
                             dateFormatee));
                     }
-
-                    this.ordersBindingSource.RemoveFilter();
-                    Console.WriteLine();
                 }
-
                 // 6. Remise à zéro
                 this.customersBindingSource.RemoveSort(); 
                 this.customersBindingSource.RemoveFilter();
